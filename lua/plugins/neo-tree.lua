@@ -9,6 +9,9 @@ return {
   },
   opts = {
     close_if_last_window = true,
+    window = {
+      width = 30,
+    },
     filesystem = {
       follow_current_file = true,
       hijack_netrw_behavior = "open_current",
