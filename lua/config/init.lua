@@ -12,14 +12,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
-vim.opt.termguicolors = true -- enable 24-bit RGB colors
 
 require("lazy").setup {
-  root = vim.fn.stdpath "data" .. "/lazy", -- directory where plugins will be installed
   spec = {
-    import = "plugins",
+    { import = "plugins" },
   },
-  lockfile = vim.fn.stdpath "config" .. "/lazy-lock.json", -- lockfile generated after running update.
   defaults = {
     lazy = true, -- should plugins be lazy-loaded?
     version = nil,
@@ -48,18 +45,24 @@ require("lazy").setup {
     notify = false,
   },
   performance = {
-    cache = {
-      enabled = true,
-    },
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
+    }
   },
-  state = vim.fn.stdpath "state" .. "/lazy/state.json", -- state info for checker and other things
 }
 
-for _, source in ipairs {
-  "config.options",
-  "config.keymaps",
-  "config.autocmds",
-} do
-  local status_ok, fault = pcall(require, source)
-  if not status_ok then vim.api.nvim_err_writeln("Failed to load " .. source .. "\n\n" .. fault) end
+local modules = { "config.autocmds", "config.options", "config.keymaps" }
+
+for _, mod in ipairs(modules) do
+  local ok, err = pcall(require, mod)
+  if not ok then
+    error(("Error loading %s...\n\n%s"):format(mod, err))
+  end
 end

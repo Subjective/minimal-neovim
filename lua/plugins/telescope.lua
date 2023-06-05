@@ -1,6 +1,7 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
+    cmd = "Telescope",
     dependencies = {
       "nvim-lua/plenary.nvim",
       {
@@ -8,25 +9,23 @@ return {
         build = "make",
       },
     },
-    opts = function()
-      local actions = require "telescope.actions"
-      return {
-        defaults = {
-          mappings = {
-            i = {
-              ["<C-n>"] = actions.cycle_history_next,
-              ["<C-p>"] = actions.cycle_history_prev,
-              ["<C-j>"] = actions.move_selection_next,
-              ["<C-k>"] = actions.move_selection_previous,
-            },
-            n = { q = actions.close },
+    opts = {
+      defaults = {
+        mappings = {
+          i = {
+            ["<C-n>"] = "cycle_history_next",
+            ["<C-p>"] = "cycle_history_prev",
+            ["<C-j>"] = "move_selection_next",
+            ["<C-k>"] = "move_selection_previous",
           },
+          n = { q = "close" },
         },
-      }
-    end,
-    config = function()
-      require("telescope").setup()
-      require("telescope").load_extension "fzf"
-    end,
+      },
+    },
+    config = function(_, opts)
+      local telescope = require "telescope"
+      telescope.setup(opts)
+      telescope.load_extension("fzf")
+    end
   },
 }

@@ -4,6 +4,7 @@ return {
   opts = {
     integrations = {
       cmp = true,
+      telescope = true,
       gitsigns = true,
       native_lsp = {
         enabled = true,
@@ -15,6 +16,8 @@ return {
         },
       },
       treesitter = true,
+      mason = true,
+      neotree = true,
     },
   },
 }
