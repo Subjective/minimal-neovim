@@ -18,6 +18,7 @@ return {
       treesitter = true,
       mason = true,
       neotree = true,
+      leap = true
     },
   },
 }
