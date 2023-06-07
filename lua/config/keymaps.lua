@@ -24,14 +24,20 @@ vim.keymap.set("n", "<leader>fw", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 
+-- Move lines up and down
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
 -- Neo-tree
 vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>")
 
 -- Comment
-vim.keymap.set("n", "<leader>/",
-  function() require("Comment.api").toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1) end)
-vim.keymap.set("v", "<leader>/",
-  "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>")
+vim.keymap.set(
+  "n",
+  "<leader>/",
+  function() require("Comment.api").toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1) end
+)
+vim.keymap.set("v", "<leader>/", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>")
 
 -- Undotree
 vim.keymap.set("n", "<leader>U", "<cmd>UndotreeToggle<cr>")
