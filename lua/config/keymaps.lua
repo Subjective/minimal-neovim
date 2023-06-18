@@ -30,6 +30,11 @@ keymap("n", "<leader>fw", builtin.live_grep, {})
 keymap("n", "<leader>fb", builtin.buffers, {})
 keymap("n", "<leader>fh", builtin.help_tags, {})
 
+-- Git
+keymap("n", "<leader>gb", builtin.git_branches, {})
+keymap("n", "<leader>gc", builtin.git_commits, {})
+keymap("n", "<leader>gs", builtin.git_status, {})
+
 -- Move lines up and down
 keymap("v", "J", ":m '>+1<CR>gv=gv")
 keymap("v", "K", ":m '<-2<CR>gv=gv")
