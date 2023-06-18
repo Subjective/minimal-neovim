@@ -12,6 +12,10 @@ keymap("n", "<C-j>", "<C-w>j", {})
 keymap("n", "<C-k>", "<C-w>k", {})
 keymap("n", "<C-l>", "<C-w>l", {})
 
+-- Buffer navigation
+keymap("n", "[b", "<cmd>bprev<cr>")
+keymap("n", "]b", "<cmd>bnext<cr>")
+
 -- Packages
 keymap("n", "<leader>ps", function() require("lazy").home() end)
 keymap("n", "<leader>pS", function() require("lazy").sync() end)
