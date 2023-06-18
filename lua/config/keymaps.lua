@@ -37,8 +37,8 @@ keymap("n", "<leader>gc", builtin.git_commits, {})
 keymap("n", "<leader>gs", builtin.git_status, {})
 
 -- Move lines up and down
-keymap("v", "J", ":m '>+1<CR>gv=gv")
-keymap("v", "K", ":m '<-2<CR>gv=gv")
+keymap("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
+keymap("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
 
 -- Neo-tree
 keymap("n", "<leader>e", "<cmd>Neotree toggle<cr>")
