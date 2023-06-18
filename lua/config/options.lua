@@ -49,7 +49,7 @@ local options = {
       precedes = "«",
       nbsp = "×",
     },
-    shm = "I", -- Disable neovim start screen
+    shm = vim.opt.shm + "sI", -- Disable neovim start screen
   },
   g = {
     mapleader = " ",                                                    -- set leader key
