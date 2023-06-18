@@ -55,7 +55,6 @@ local options = {
     mapleader = " ",                                                    -- set leader key
     maplocalleader = ",",                                               -- set default local leader key
   },
-  t = vim.t.bufs and vim.t.bufs or { bufs = vim.api.nvim_list_bufs() }, -- initialize buffers for the current tab
 }
 
 for scope, table in pairs(options) do
