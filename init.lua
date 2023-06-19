@@ -16,5 +16,12 @@ for _, cmd in ipairs { "git", "rg", { "fd", "fdfind" } } do
   if not found then error(("`%s` is not installed"):format(name)) end
 end
 
--- Load main config
-require "config.lazy"
+-- Load config
+local modules = { "config.options", "config.autocmds", "config.lazy", "config.keymaps" }
+
+for _, mod in ipairs(modules) do
+  local ok, err = pcall(require, mod)
+  if not ok then
+    error(("Error loading %s...\n\n%s"):format(mod, err))
+  end
+end

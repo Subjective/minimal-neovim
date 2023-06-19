@@ -63,5 +63,3 @@ for scope, table in pairs(options) do
     vim[scope][setting] = value
   end
 end
-
-vim.cmd.colorscheme "catppuccin"

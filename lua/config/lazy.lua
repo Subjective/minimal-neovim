@@ -11,8 +11,6 @@ if not vim.uv.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = " "
-
 require("lazy").setup {
   spec = {
     { import = "plugins" },
@@ -75,15 +73,8 @@ require("lazy").setup {
         "ftplugin",
         "editorconfig",
       },
-    }
+    },
   },
 }
 
-local modules = { "config.autocmds", "config.options", "config.keymaps" }
-
-for _, mod in ipairs(modules) do
-  local ok, err = pcall(require, mod)
-  if not ok then
-    error(("Error loading %s...\n\n%s"):format(mod, err))
-  end
-end
+vim.cmd.colorscheme "catppuccin"
