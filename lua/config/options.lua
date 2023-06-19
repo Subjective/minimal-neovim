@@ -4,7 +4,6 @@ local options = {
     clipboard = "unnamedplus",                       -- Connection to the system clipboard
     completeopt = { "menu", "menuone", "noselect" }, -- Options for insert mode completion
     copyindent = true,                               -- Copy the previous indentation on autoindenting
-    cursorline = true,                               -- Highlight the text line of the cursor
     expandtab = true,                                -- Enable the use of space in tab
     fillchars = { eob = " " },                       -- Disable `~` on nonexistent lines
     foldenable = true,                               -- enable fold for nvim-ufo
@@ -52,8 +51,8 @@ local options = {
     shm = vim.opt.shm + "sI", -- Disable neovim start screen
   },
   g = {
-    mapleader = " ",                                                    -- set leader key
-    maplocalleader = ",",                                               -- set default local leader key
+    mapleader = " ",      -- set leader key
+    maplocalleader = ",", -- set default local leader key
   },
 }
 
