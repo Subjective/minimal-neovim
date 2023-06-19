@@ -1,8 +1,6 @@
 local augroup = vim.api.nvim_create_augroup -- Create/get autocommand group
 local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
 
--- General settings
-
 -- Highlight on yank
 autocmd("TextYankPost", {
   callback = function()
@@ -29,6 +27,7 @@ autocmd("FileType", {
   command = "set fo-=c fo-=r fo-=o",
 })
 
+-- Set line wrap and spelling for text files
 autocmd("FileType", {
   pattern = { "gitcommit", "markdown", "text" },
   callback = function()
