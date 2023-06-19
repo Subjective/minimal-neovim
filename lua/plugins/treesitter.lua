@@ -64,12 +64,13 @@ return {
             },
           },
         }
-      end
+      end,
     },
   },
   opts = {
     -- A list of parser names, or "all"
     ensure_installed = {},
+    auto_install = vim.fn.executable "tree-sitter" == 1,
     highlight = {
       enable = true,
       use_languagetree = true,
