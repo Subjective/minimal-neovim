@@ -5,7 +5,9 @@ keymap("n", "<leader>w", "<cmd>w<cr>")
 keymap("n", "<leader>q", "<cmd>confirm q<cr>")
 keymap("n", "<leader>c", "<cmd>confirm bdelete<cr>")
 keymap("n", "<leader>n", "<cmd>enew<cr>")
-keymap("n", "<ESC>", "<cmd>nohlsearch<cr><C-l>")
+
+-- Clear screen highlights and cmdline
+keymap("n", "<ESC>", "<cmd>nohlsearch<cr>:<backspace>")
 
 -- Move around splits
 keymap("n", "<C-h>", "<C-w>h", {})
