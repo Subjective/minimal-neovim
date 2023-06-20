@@ -7,11 +7,33 @@ return {
     {
       "nvim-treesitter/nvim-treesitter-textobjects",
       "RRethy/nvim-treesitter-textsubjects",
-    }
+    },
   },
   opts = {
     -- A list of parser names, or "all"
-    ensure_installed = {},
+    ensure_installed = {
+      "lua",
+      "javascript",
+      "typescript",
+      "swift",
+      "html",
+      "css",
+      "cpp",
+      "python",
+      "java",
+      "bash",
+      "markdown",
+      "markdown_inline",
+      "regex",
+      "vim",
+      "latex",
+      "tsx",
+      "diff",
+      "git_rebase",
+      "gitcommit",
+      "git_config",
+      "gitignore",
+    },
     auto_install = vim.fn.executable "tree-sitter" == 1,
     highlight = {
       enable = true,
