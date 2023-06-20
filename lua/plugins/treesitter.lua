@@ -6,66 +6,8 @@ return {
   dependencies = {
     {
       "nvim-treesitter/nvim-treesitter-textobjects",
-      config = function()
-        require("nvim-treesitter.configs").setup {
-          textobjects = {
-            select = {
-              enable = true,
-              -- Automatically jump forward to textobj, similar to targets.vim
-              lookahead = true,
-              keymaps = {
-                ["af"] = "@function.outer",
-                ["if"] = "@function.inner",
-                ["ac"] = "@class.outer",
-                ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
-                ["as"] = {
-                  query = "@scope",
-                  query_group = "locals",
-                  desc = "Select language scope",
-                },
-              },
-              selection_modes = {
-                ["@parameter.outer"] = "v", -- charwise
-                ["@function.outer"] = "V",  -- linewise
-                ["@class.outer"] = "<c-v>", -- blockwise
-              },
-              include_surrounding_whitespace = true,
-            },
-            move = {
-              enable = true,
-              set_jumps = true, -- whether to set jumps in the jumplist
-              goto_next_start = {
-                ["]m"] = "@function.outer",
-                ["]]"] = { query = "@class.outer", desc = "Next class start" },
-                --
-                -- You can use regex matching and/or pass a list in a "query" key to group multiple queires.
-                ["]o"] = "@loop.*",
-                ["]s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
-                ["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
-              },
-              goto_next_end = {
-                ["]M"] = "@function.outer",
-                ["]["] = "@class.outer",
-              },
-              goto_previous_start = {
-                ["[m"] = "@function.outer",
-                ["[["] = "@class.outer",
-              },
-              goto_previous_end = {
-                ["[M"] = "@function.outer",
-                ["[]"] = "@class.outer",
-              },
-              goto_next = {
-                ["]d"] = "@conditional.outer",
-              },
-              goto_previous = {
-                ["[d"] = "@conditional.outer",
-              },
-            },
-          },
-        }
-      end,
-    },
+      "RRethy/nvim-treesitter-textsubjects",
+    }
   },
   opts = {
     -- A list of parser names, or "all"
@@ -91,6 +33,76 @@ return {
       },
       highlight_current_scope = {
         enable = false,
+      },
+    },
+    textobjects = {
+      select = {
+        enable = true,
+        lookahead = true,
+        keymaps = {
+          ["ak"] = "@block.outer",
+          ["ik"] = "@block.inner",
+          ["ac"] = "@class.outer",
+          ["ic"] = "@class.inner",
+          ["a?"] = "@conditional.outer",
+          ["i?"] = "@conditional.inner",
+          ["af"] = "@function.outer",
+          ["if"] = "@function.inner",
+          ["al"] = "@loop.outer",
+          ["il"] = "@loop.inner",
+          ["aa"] = "@parameter.outer",
+          ["ia"] = "@parameter.inner",
+        },
+      },
+      move = {
+        enable = true,
+        set_jumps = true,
+        goto_next_start = {
+          ["]k"] = { query = "@block.outer", desc = "Next block start" },
+          ["]c"] = { query = "@class.outer", desc = "Next class start" },
+          ["]f"] = { query = "@function.outer", desc = "Next function start" },
+          ["]a"] = { query = "@parameter.outer", desc = "Next parameter start" },
+        },
+        goto_next_end = {
+          ["]k"] = { query = "@block.outer", desc = "Next block end" },
+          ["]c"] = { query = "@class.outer", desc = "Next class end" },
+          ["]f"] = { query = "@function.outer", desc = "Next function end" },
+          ["]a"] = { query = "@parameter.outer", desc = "Next parameter end" },
+        },
+        goto_previous_start = {
+          ["[k"] = { query = "@block.outer", desc = "Previous block start" },
+          ["[c"] = { query = "@class.outer", desc = "Previous class start" },
+          ["[f"] = { query = "@function.outer", desc = "Previous function start" },
+          ["[a"] = { query = "@parameter.outer", desc = "Previous parameter start" },
+        },
+        goto_previous_end = {
+          ["[K"] = { query = "@block.outer", desc = "Previous block end" },
+          ["[C"] = { query = "@class.outer", desc = "Previous class end" },
+          ["[F"] = { query = "@function.outer", desc = "Previous function end" },
+          ["[A"] = { query = "@parameter.outer", desc = "Previous parameter end" },
+        },
+      },
+      swap = {
+        enable = true,
+        swap_next = {
+          [">k"] = { query = "@block.outer", desc = "Swap next block" },
+          [">f"] = { query = "@function.outer", desc = "Swap next function" },
+          [">a"] = { query = "@parameter.inner", desc = "Swap next parameter" },
+        },
+        swap_previous = {
+          ["<k"] = { query = "@block.outer", desc = "Swap previous block" },
+          ["<f"] = { query = "@function.outer", desc = "Swap previous function" },
+          ["<a"] = { query = "@parameter.inner", desc = "Swap previous parameter" },
+        },
+      },
+    },
+    textsubjects = {
+      enable = true,
+      prev_selection = ",", -- (Optional) keymap to select the previous selection
+      keymaps = {
+        ["."] = "textsubjects-smart",
+        [";"] = "textsubjects-container-outer",
+        ["i;"] = "textsubjects-container-inner",
       },
     },
   },
