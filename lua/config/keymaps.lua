@@ -9,6 +9,13 @@ keymap("n", "<leader>n", "<cmd>enew<cr>")
 -- Clear screen highlights and cmdline
 keymap("n", "<ESC>", "<cmd>nohlsearch<cr>:<backspace>")
 
+-- yanking, deleting, and pasting
+keymap({ "n", "x" }, [[y"]], function() vim.fn.setreg("+", vim.fn.getreg '"') end)
+keymap({ "n", "x" }, "<leader>y", [["+y]])
+keymap({ "n", "x" }, "<leader>Y", [["+y$]])
+keymap({ "n", "x" }, "<leader>d", [["_d]])
+keymap("x", "<leader>p", [["_dP]])
+
 -- Move around splits
 keymap("n", "<C-h>", "<C-w>h", {})
 keymap("n", "<C-j>", "<C-w>j", {})
