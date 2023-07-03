@@ -1,7 +1,7 @@
 local options = {
   opt = {
     breakindent = true,                              -- Wrap indent to match  line start
-    clipboard = "unnamedplus",                       -- Connection to the system clipboard
+    clipboard = "",                                  -- Set default clipboard for yanking and deleting
     completeopt = { "menu", "menuone", "noselect" }, -- Options for insert mode completion
     copyindent = true,                               -- Copy the previous indentation on autoindenting
     cursorline = true,                               -- Highlight the text line of the cursor
