@@ -42,15 +42,8 @@ local options = {
     swapfile = false,                                -- Disable swapfile
     wrap = false,                                    -- Disable wrapping of lines longer than the width of window
     writebackup = false,                             -- Disable making a backup before overwriting a file
-    list = true,                                     -- show whitespace characters
-    listchars = {
-      tab = "┊ ",
-      trail = "·",
-      extends = "»",
-      precedes = "«",
-      nbsp = "×",
-    },
-    shm = vim.opt.shm + "sI", -- Disable neovim start screen
+    splitkeep = "screen",                            -- Stabilize buffer content on window open/close events
+    shm = vim.opt.shm + "sI",                        -- Disable neovim start screen
   },
   g = {
     mapleader = " ",      -- set leader key
