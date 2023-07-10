@@ -7,7 +7,7 @@ return {
   opts = {
     integrations = {
       cmp = true,
-      telescope = true,
+      telescope = { enabled = true, style = "nvchad" },
       gitsigns = true,
       native_lsp = {
         enabled = true,
@@ -21,7 +21,17 @@ return {
       treesitter = true,
       mason = true,
       neotree = true,
-      leap = true,
     },
+    custom_highlights = function(colors)
+      return {
+        -- lightspeed-style highlighting for leap
+        LeapBackdrop = { link = "Comment" },
+        LeapMatch = { fg = colors.text, style = { "bold", "nocombine" } },
+        LeapLabelPrimary = { fg = colors.pink, style = { "bold", "nocombine" } },
+        LeapLabelSecondary = { fg = colors.blue, style = { "bold", "nocombine" } },
+        -- hide telescope results title in nvchad theme
+        TelescopeResultsTitle = { fg = colors.mantle },
+      }
+    end,
   },
 }
