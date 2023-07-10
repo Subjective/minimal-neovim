@@ -10,7 +10,7 @@ keymap("n", "<leader>n", "<cmd>enew<cr>")
 keymap("n", "<ESC>", "<cmd>nohlsearch<cr>:<backspace>")
 
 -- yanking, deleting, and pasting
-keymap({ "n", "x" }, [[y"]], function() vim.fn.setreg("+", vim.fn.getreg '"') end)
+keymap({ "n" }, [[y"]], function() vim.fn.setreg("+", vim.fn.getreg '"') end)
 keymap({ "n", "x" }, "<leader>y", [["+y]])
 keymap({ "n", "x" }, "<leader>Y", [["+y$]])
 keymap({ "n", "x" }, "<leader>d", [["_d]])
