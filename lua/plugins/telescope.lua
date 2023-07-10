@@ -11,6 +11,7 @@ return {
     },
     opts = {
       defaults = {
+        selection_caret = "  ",
         path_display = { "truncate" },
         sorting_strategy = "ascending",
         layout_config = {
