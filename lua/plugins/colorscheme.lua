@@ -30,7 +30,7 @@ return {
         LeapLabelPrimary = { fg = colors.pink, style = { "bold", "nocombine" } },
         LeapLabelSecondary = { fg = colors.blue, style = { "bold", "nocombine" } },
         -- hide telescope results title in nvchad theme
-        TelescopeResultsTitle = { fg = colors.mantle },
+        TelescopeResultsTitle = { fg = colors.mantle, bg = colors.none },
       }
     end,
   },
