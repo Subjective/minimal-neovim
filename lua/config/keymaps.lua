@@ -25,6 +25,7 @@ keymap("n", "<C-l>", "<C-w>l", {})
 -- Buffer navigation
 keymap("n", "[b", "<cmd>bprev<cr>")
 keymap("n", "]b", "<cmd>bnext<cr>")
+keymap("n", "<leader>`", "<cmd>e #<cr>")
 
 -- Packages
 keymap("n", "<leader>ps", function() require("lazy").home() end)
