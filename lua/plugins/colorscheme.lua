@@ -26,9 +26,9 @@ return {
       return {
         -- lightspeed-style highlighting for leap
         LeapBackdrop = { link = "Comment" },
-        LeapMatch = { fg = colors.text, style = { "bold", "nocombine" } },
-        LeapLabelPrimary = { fg = colors.pink, style = { "bold", "nocombine" } },
-        LeapLabelSecondary = { fg = colors.blue, style = { "bold", "nocombine" } },
+        LeapMatch = { fg = colors.text, style = { "bold" } },
+        LeapLabelPrimary = { fg = colors.pink, style = { "bold" } },
+        LeapLabelSecondary = { fg = colors.blue, style = { "bold" } },
         -- hide telescope results title in nvchad theme
         TelescopeResultsTitle = { fg = colors.mantle, bg = colors.none },
       }
