@@ -37,6 +37,7 @@ keymap("n", "<leader>pM", "<cmd>MasonUpdateAll<cr>")
 keymap("n", "<leader>ff", function() require("telescope.builtin").find_files() end)
 keymap("n", "<leader>fo", function() require("telescope.builtin").oldfiles() end)
 keymap("n", "<leader>fw", function() require("telescope.builtin").live_grep() end)
+keymap("n", "<leader>f/", function() require("telescope.builtin").current_buffer_fuzzy_find() end)
 keymap("n", "<leader>fb", function() require("telescope.builtin").buffers() end)
 keymap("n", "<leader>fh", function() require("telescope.builtin").help_tags() end)
 
