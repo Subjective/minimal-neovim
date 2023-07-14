@@ -34,17 +34,16 @@ keymap("n", "<leader>pm", "<cmd>Mason<cr>")
 keymap("n", "<leader>pM", "<cmd>MasonUpdateAll<cr>")
 
 -- Telescope
-local builtin = require "telescope.builtin"
-keymap("n", "<leader>ff", builtin.find_files, {})
-keymap("n", "<leader>fo", builtin.oldfiles, {})
-keymap("n", "<leader>fw", builtin.live_grep, {})
-keymap("n", "<leader>fb", builtin.buffers, {})
-keymap("n", "<leader>fh", builtin.help_tags, {})
+keymap("n", "<leader>ff", function() require("telescope.builtin").find_files() end)
+keymap("n", "<leader>fo", function() require("telescope.builtin").oldfiles() end)
+keymap("n", "<leader>fw", function() require("telescope.builtin").live_grep() end)
+keymap("n", "<leader>fb", function() require("telescope.builtin").buffers() end)
+keymap("n", "<leader>fh", function() require("telescope.builtin").help_tags() end)
 
 -- Git
-keymap("n", "<leader>gb", builtin.git_branches, {})
-keymap("n", "<leader>gc", builtin.git_commits, {})
-keymap("n", "<leader>gs", builtin.git_status, {})
+keymap("n", "<leader>gb", function() require("telescope.builtin").git_branches() end)
+keymap("n", "<leader>gc", function() require("telescope.builtin").git_commits() end)
+keymap("n", "<leader>gs", function() require("telescope.builtin").git_status() end)
 
 -- Move lines up and down
 keymap("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
