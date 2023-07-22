@@ -9,7 +9,7 @@ return {
       { "S",  "<Plug>(leap-backward-to)",   mode = { "n", "x", "o" }, desc = "Leap backward to" },
       { "x",  "<Plug>(leap-forward-till)",  mode = { "x", "o" },      desc = "Leap forward till" },
       { "X",  "<Plug>(leap-backward-till)", mode = { "x", "o" },      desc = "Leap backward till" },
-      { "zS", "<Plug>(leap-from-window)",   mode = { "n", "x", "o" }, desc = "Leap from window" },
+      { "zS", "<Plug>(leap-from-window)",   mode = { "n" },           desc = "Leap from window" },
     },
     opts = function()
       require("leap").add_repeat_mappings(";", ",", {
