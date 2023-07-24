@@ -18,5 +18,6 @@ return {
         'filename'
       },
     },
+    extensions = { "neo-tree", "lazy", "fugitive" },
   }
 }
