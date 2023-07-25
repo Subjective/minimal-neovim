@@ -45,10 +45,6 @@ local options = {
     splitkeep = "screen",                            -- Stabilize buffer content on window open/close events
     shm = vim.opt.shm + "sI",                        -- Disable neovim start screen
   },
-  g = {
-    mapleader = " ",      -- set leader key
-    maplocalleader = ",", -- set default local leader key
-  },
 }
 
 for scope, table in pairs(options) do
