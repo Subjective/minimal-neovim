@@ -8,11 +8,6 @@ local options = {
     cursorlineopt = "number",                        -- Highlight the current line number
     expandtab = true,                                -- Enable the use of space in tab
     fillchars = { eob = " " },                       -- Disable `~` on nonexistent lines
-    foldenable = true,                               -- enable fold for nvim-ufo
-    foldmethod = "marker",                           -- enable folding triggered by markers ({{{)
-    foldlevel = 99,                                  -- set high foldlevel for nvim-ufo
-    foldlevelstart = 99,                             -- start with all code unfolded
-    foldcolumn = "1",                                -- show foldcolumn in nvim 0.9
     history = 100,                                   -- Number of commands to remember in a history table
     ignorecase = true,                               -- Case insensitive searching
     infercase = true,                                -- Infer cases in keyword completion
