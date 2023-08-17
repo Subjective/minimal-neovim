@@ -36,11 +36,15 @@ return {
       local luasnip = require "luasnip"
 
       local function has_words_before()
-        local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+        local line, col = (unpack or table.unpack)(vim.api.nvim_win_get_cursor(0))
         return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
       end
 
       cmp.setup {
+        history = true,
+        delete_check_events = "TextChanged",
+        region_check_events = "CursorMoved",
+        store_selection_keys = "<C-x>",
         mapping = {
           ["<Up>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
           ["<Down>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
@@ -105,12 +109,12 @@ return {
 
       lsp.on_attach(function(client, bufnr) lsp.default_keymaps { buffer = bufnr } end)
 
-      lsp.set_sign_icons({
-        error = '',
-        warn = '',
-        hint = '󰌵',
-        info = '󰋼'
-      })
+      lsp.set_sign_icons {
+        error = "",
+        warn = "",
+        hint = "󰌵",
+        info = "󰋼",
+      }
 
       -- (Optional) Configure lua language server for neovim
       require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
