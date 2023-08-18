@@ -16,6 +16,5 @@ return {
       change = "cs",
       change_line = "cS",
     },
-
   }
 }
