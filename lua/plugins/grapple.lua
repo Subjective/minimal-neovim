@@ -16,6 +16,5 @@ return {
     { "<leader>2",   function() require("grapple").select { key = 2 } end, desc = "Grapple 2" },
     { "<leader>3",   function() require("grapple").select { key = 3 } end, desc = "Grapple 3" },
     { "<leader>4",   function() require("grapple").select { key = 4 } end, desc = "Grapple 4" },
-
   },
 }
