@@ -5,8 +5,6 @@ return {
   opts = {
     options = {
       theme = "catppuccin",
-      section_separators = '',
-      component_separators = ''
     },
     sections = {
       lualine_c = {
