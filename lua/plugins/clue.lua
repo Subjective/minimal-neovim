@@ -45,9 +45,10 @@ return {
         miniclue.gen_clues.registers(),
         miniclue.gen_clues.windows(),
         miniclue.gen_clues.z(),
-        { mode = 'n', keys = '<Leader>f', desc = '+Find' },
-        { mode = 'n', keys = '<Leader>g', desc = '+Git' },
-        { mode = 'n', keys = '<Leader>p', desc = '+Packages' },
+        { mode = "n", keys = "<Leader>f", desc = "+Find" },
+        { mode = "n", keys = "<Leader>g", desc = "+Git" },
+        { mode = "n", keys = "<Leader>p", desc = "+Packages" },
+        { mode = "n", keys = "<Leader><Leader>", desc = "+Harpoon" },
       },
     }
   end,
