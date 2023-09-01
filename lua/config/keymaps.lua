@@ -1,8 +1,8 @@
 local keymap = vim.keymap.set
 
 -- Standard operations
-keymap("n", "<leader>w", "<cmd>w<cr>", { desc = "Save" })
-keymap("n", "<leader>q", "<cmd>confirm q<cr>", { desc = "Quit" })
+keymap("n", "<leader>w", "<cmd>write<cr>", { desc = "Save" })
+keymap("n", "<leader>q", "<cmd>confirm quit<cr>", { desc = "Quit" })
 keymap("n", "<leader>c", "<cmd>confirm bdelete<cr>", { desc = "Close buffer" })
 keymap("n", "<leader>n", "<cmd>enew<cr>", { desc = "New file" })
 
