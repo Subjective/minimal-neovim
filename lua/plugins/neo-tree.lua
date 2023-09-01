@@ -11,6 +11,10 @@ return {
     close_if_last_window = true,
     window = {
       width = 30,
+      fuzzy_finder_mappings = {
+        ["<C-j>"] = "move_cursor_down",
+        ["<C-k>"] = "move_cursor_up",
+      },
     },
     filesystem = {
       follow_current_file    = true,
