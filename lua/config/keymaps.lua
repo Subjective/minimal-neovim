@@ -16,12 +16,6 @@ keymap({ "n", "x" }, "<leader>Y", [["+y$]])
 keymap({ "n", "x" }, "<leader>d", [["_d]])
 keymap("x", "<leader>p", [["_dP]])
 
--- Move around splits
-keymap("n", "<C-h>", "<C-w>h", {})
-keymap("n", "<C-j>", "<C-w>j", {})
-keymap("n", "<C-k>", "<C-w>k", {})
-keymap("n", "<C-l>", "<C-w>l", {})
-
 -- Buffer navigation
 keymap("n", "[b", "<cmd>bprev<cr>")
 keymap("n", "]b", "<cmd>bnext<cr>")
@@ -56,7 +50,8 @@ keymap("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
 keymap("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
 
 -- Neo-tree
-keymap("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle explorer" })
+keymap("n", "<leader>e", "<cmd>Neotree toggle float<cr>", { desc = "Toggle explorer" })
+keymap("n", "<c-n>", "<cmd>Neotree toggle left show<cr>", { desc = "Toggle explorer" })
 
 -- Comment
 keymap(
