@@ -11,6 +11,7 @@ return {
     { prefix .. "s", "<cmd>GrapplePopup scopes<CR>",                       desc = "Select a project scope" },
     { prefix .. "x", "<cmd>GrappleReset<CR>",                              desc = "Clear tags from current project" },
     { "<leader>'",   "<cmd>GrappleToggle<cr>",                             desc = "Toggle file tag" },
+    { "<c-'>",       "<cmd>GrapplePopup tags<CR>",                         desc = "Select from tags" },
     { "<c-p>",       "<cmd>GrapplePopup tags<cr>",                         desc = "Toggle file tag" },
     { "<c-j>",       function() require("grapple").select { key = 1 } end, desc = "Go to Grapple tag 1" },
     { "<c-k>",       function() require("grapple").select { key = 2 } end, desc = "Go to Grapple tag 2" },
