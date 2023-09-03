@@ -8,13 +8,6 @@ autocmd("TextYankPost", {
   end,
 })
 
--- Auto format on save using the attached (optionally filtered) language server clients
--- https://neovim.io/doc/user/lsp.html#vim.lsp.buf.format()
-autocmd("BufWritePre", {
-  pattern = "",
-  command = ":silent lua vim.lsp.buf.format()",
-})
-
 -- Don't auto comment new lines
 autocmd("FileType", {
   pattern = "*",
