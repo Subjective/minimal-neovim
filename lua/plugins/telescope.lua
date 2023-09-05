@@ -11,7 +11,7 @@ return {
     },
     opts = {
       defaults = {
-        selection_caret = "  ",
+        borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
         path_display = { "truncate" },
         sorting_strategy = "ascending",
         layout_config = {

@@ -7,7 +7,6 @@ return {
   opts = {
     integrations = {
       cmp = true,
-      telescope = { enabled = true, style = "nvchad" },
       gitsigns = true,
       native_lsp = {
         enabled = true,
@@ -29,8 +28,6 @@ return {
         LeapMatch = { fg = colors.text, style = { "bold" } },
         LeapLabelPrimary = { fg = colors.pink, style = { "bold" } },
         LeapLabelSecondary = { fg = colors.blue, style = { "bold" } },
-        -- hide telescope results title in nvchad theme
-        TelescopeResultsTitle = { fg = colors.mantle, bg = colors.none },
       }
     end,
   },
