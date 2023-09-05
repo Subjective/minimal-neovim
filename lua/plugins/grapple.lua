@@ -3,6 +3,14 @@ return {
   "cbochs/grapple.nvim",
   dependencies = { "nvim-lua/plenary.nvim" },
   cmd = { "Grapple" },
+  config = function()
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "grapple",
+      callback = function()
+        vim.keymap.set({ "n", "x" }, "<c-'>", "<cmd>quit<cr>", { buffer = true })
+      end
+    })
+  end,
   keys = {
     { prefix .. "a", "<cmd>GrappleTag<CR>",                                desc = "Add file" },
     { prefix .. "d", "<cmd>GrappleUntag<CR>",                              desc = "Remove file" },
