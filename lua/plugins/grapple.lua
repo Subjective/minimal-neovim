@@ -1,6 +1,6 @@
 local prefix = "<leader><leader>"
 return {
-  "cbochs/grapple.nvim",
+  "Subjective/grapple.nvim",
   dependencies = { "nvim-lua/plenary.nvim" },
   cmd = { "Grapple" },
   config = function()
