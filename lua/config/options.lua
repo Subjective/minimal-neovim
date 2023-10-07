@@ -34,7 +34,6 @@ local options = {
     undofile = true,                                 -- Enable persistent undo
     updatetime = 250,                                -- Length of time to wait before triggering the plugin
     virtualedit = "block",                           -- Allow going past end of line in visual block mode
-    swapfile = false,                                -- Disable swapfile
     wrap = false,                                    -- Disable wrapping of lines longer than the width of window
     writebackup = false,                             -- Disable making a backup before overwriting a file
     splitkeep = "screen",                            -- Stabilize buffer content on window open/close events
